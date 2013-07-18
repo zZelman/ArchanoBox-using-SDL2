@@ -1,0 +1,2 @@
+* Could render HUD in SDL code in gameRender_SDL method instead of OpenGL code (possibility, have not looked into in depth)
+* '// [TEMPORARY LOCATION]' represents tutorial code, or temporary code. MUST be taken out, or moved when making a game
