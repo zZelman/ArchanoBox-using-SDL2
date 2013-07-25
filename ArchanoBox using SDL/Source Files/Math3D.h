@@ -70,15 +70,6 @@ struct SVector3f
 		return *this;
 	}
 
-	//SVector3f& operator*(float f)
-	//{
-	//	float _x = x * f;
-	//	float _y = y * f;
-	//	float _z = z * f;
-
-	//	return SVector3f(_x, _y, _z);
-	//}
-
 	// * cross product between two vector3f objects (this and the one given)
 	// * A cross product between two vectors produces a vector which is perpendicular to the plane defined by the vectors
 	SVector3f crossProduct(const SVector3f& v) const;

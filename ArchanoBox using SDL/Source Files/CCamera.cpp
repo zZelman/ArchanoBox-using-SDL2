@@ -2,12 +2,6 @@
 
 #include "CCamera.h"
 
-CCamera::~CCamera()
-{
-
-}
-
-
 CCamera::CCamera(int windowWidth, int windowHeight, float stepScale)
 {
 	m_windowWidth = windowWidth;

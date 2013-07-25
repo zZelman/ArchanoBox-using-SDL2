@@ -5,7 +5,6 @@
 class CCamera
 {
 public:
-	~CCamera();
 	CCamera(int windowWidth, int windowHeight, float stepScale = 0.1f);
 	CCamera(int windowWidth, int windowHeight,
 	        const SVector3f& position, const SVector3f& target, const SVector3f& up,

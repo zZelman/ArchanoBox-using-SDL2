@@ -100,8 +100,8 @@ public:
 
 		m_pShaderCode = new CShader();
 		m_pGameCamera = new CCamera(WINDOW_WIDTH, WINDOW_HEIGHT);
-		m_pTexture = new CTexture(GL_TEXTURE_2D, "test.png");
-		m_pTexture->load();
+		//m_pTexture = new CTexture(GL_TEXTURE_2D, "test.png");
+		//m_pTexture->load();
 	}
 
 
@@ -207,7 +207,7 @@ private:
 
 		static float scale = 0.0f;
 
-		scale += 0.5f;
+		scale += 0.1f;
 
 		CTransformationPipeline transPipe;
 		transPipe.setRotateInfo(0.0f, scale, 0.0f);
@@ -217,29 +217,29 @@ private:
 
 		transPipe.setPerspectiveProjection(60.0f, WINDOW_WIDTH, WINDOW_HEIGHT, 1.0f, 100.0f);
 
-		glUniformMatrix4fv(m_pShaderCode->getShaderVar("gWVP"), 1, GL_TRUE, (const GLfloat*)transPipe.getTransformations());
+		glUniformMatrix4fv(m_pShaderCode->m_shaderVar_gWVP, 1, GL_TRUE, (const GLfloat*)transPipe.getTransformations());
 
 		glEnableVertexAttribArray(0); // Position
-		glEnableVertexAttribArray(1); // TexCoord
+		//glEnableVertexAttribArray(1); // TexCoord
 
 		glBindBuffer(GL_ARRAY_BUFFER, m_pShaderCode->getVBO());
 
 		// Position
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(SVertex), 0);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 		// TexCoord
-		glVertexAttribPointer(1, 2, 
-			GL_FLOAT, GL_FALSE, 
-			sizeof(SVertex), (const GLvoid*)12); // last param: offset in bytes from SVertex to texture attributes
+		//glVertexAttribPointer(1, 2, 
+		//	GL_FLOAT, GL_FALSE, 
+		//	sizeof(SVertex), (const GLvoid*)12); // last param: offset in bytes from SVertex to texture attributes
 
 
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_pShaderCode->getIBO());
 
-		m_pTexture->bind(GL_TEXTURE0);
+		//m_pTexture->bind(GL_TEXTURE0);
 
 		glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_INT, 0);
 
 		glDisableVertexAttribArray(0);
-		glDisableVertexAttribArray(1);
+		//glDisableVertexAttribArray(1);
 
 		SDL_GL_SwapWindow(m_pGameWindow);	// Swap the window/buffer to display the result.
 	}
@@ -372,9 +372,9 @@ private:
 		glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
 		// enable culling
-		glFrontFace(GL_CW);
-		glCullFace(GL_BACK);
-		glEnable(GL_CULL_FACE);
+		//glFrontFace(GL_CW);
+		//glCullFace(GL_BACK);
+		//glEnable(GL_CULL_FACE);
 	}
 
 

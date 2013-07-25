@@ -33,6 +33,10 @@ public:
 	// * 'name' is the exact name from the shader of the variable
 	GLuint getShaderVar(const std::string& name);
 
+	// [TEMPORARY LOCATION]
+	// just checking the functionality of the hash-map
+	GLuint m_shaderVar_gWVP;
+	GLuint m_shaderVar_gSampler;
 
 private:
 	const char* m_pVertexShader;
