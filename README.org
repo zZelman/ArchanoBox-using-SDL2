@@ -1,4 +1,4 @@
-#+Title: ArchanoBox
+#+Title: ArchanoBox-using-SDL2
 #+AUTHOR: Kyle Avrett
 
 This is my second ever GitHub repository. It is a re-creation of my first ever repository [[https://github.com/zZelman/ArchanoBox][ArchanoBox]] using SDL2 and raw (and outdated) OpenGL instead of just raw OpenGL.
